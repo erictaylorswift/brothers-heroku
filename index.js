@@ -30,7 +30,7 @@ app.get('/api/tracker', (req, res) => {
     .then(responses=> Promise.all(responses.map(r => r.json())))
     // .then(users => users.forEach(user => user.json()))
     .then((data)=> {
-      return res.send({data:JSON.stringify(data)})
+      return res.send({data: data})
     })
 });
 
