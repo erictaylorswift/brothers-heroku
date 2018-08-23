@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserList from './data-source/user-list';
 
 class App extends Component {
+    getData = () => {
+      fetch('/api/tracker')
+        .then(res => res.json())
+        .then(data => this.setState(data))
+    }
 
-  getData = () => {
-    fetch('/api/tracker')
-      .then(res => res.json())
-      .then(data => this.setState(data))
-  }
-
-  componentWillMount() {
-    this.getData();
-  }
+    componentDidMount() {
+      this.getData();
+    }
 
   render() {
-    const stats = this.state;
-    console.log(stats)
-
+    let stats = this.state ? this.state.data : null;
     return (
       <div id="root">
-
+          <ul>
+              <UserList data={stats}/>
+          </ul>
       </div>
     );
   }
