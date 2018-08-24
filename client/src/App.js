@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserList from './data-source/user-list';
+import KdChart from './components/bar-chart';
+import SimpleAppBar from './components/appbar';
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import { theme } from './theme.js'
 
 class App extends Component {
     getData = () => {
@@ -16,11 +19,15 @@ class App extends Component {
   render() {
     let stats = this.state ? this.state.data : null;
     return (
-      <div id="root">
-          <ul>
-              <UserList data={stats}/>
-          </ul>
+      <MuiThemeProvider theme={theme}>
+      <div>
+        <SimpleAppBar/>
+        <div class="mainSection">
+          <h3>Lifetime KD Scores</h3>
+          <KdChart data={stats}/>
+        </div>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
