@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import KdChart from './components/bar-chart';
 import SimpleAppBar from './components/appbar';
-import UserCard from './components/user-list';
+// import UserCard from './components/user-list';
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme } from './theme.js'
 
@@ -27,7 +27,7 @@ class App extends Component {
           <h2>The Brothers</h2>
           <UserCard data={stats}/>
           <div class='container'>
-            <KdChart data={stats}/>
+            // <KdChart data={stats}/>
           </div>
         </div>
       </div>
