@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Icon from '@material-ui/core/Icon';
 
 const styles ={
     root: {
@@ -18,7 +17,6 @@ function SimpleAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" color='primary'>
         <Toolbar >
-            <Icon>videogame_asset</Icon>
             <Typography variant="title" color='inherit' className={classes.title}>
                 Brothers Tracker
             </Typography>
