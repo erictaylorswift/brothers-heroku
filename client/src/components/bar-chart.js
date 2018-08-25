@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell } from 'recharts';
+import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell, LabelList } from 'recharts';
 
 class KdChart extends Component {
 
@@ -30,18 +30,24 @@ class KdChart extends Component {
     ]
 
     return (
-      <BarChart width={500} height={250} data={data}>
-        <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10'/>
-        <YAxis hide/>
-        <Tooltip />
-        <Bar dataKey='kd'>
-          {
-            data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={colors[index]}/>
-            ))
-          }
-        </Bar>
-      </BarChart>
+      <div>
+        <h3>Lifetime KD Scores</h3>
+        <div class='chart-card'>
+          <BarChart width={500} height={250} data={data}>
+            <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10' axisLine={false}/>
+            <YAxis hide/>
+            <Tooltip />
+            <Bar dataKey='kd'>
+              {
+                data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} stroke={colors[index]} strokeWidth='4' fill='none'/>
+                ))
+              }
+              <LabelList dataKey='kd' position="insideTop" fill='#393939' stroke='none'/>
+            </Bar>
+          </BarChart>
+        </div>
+      </div>
     )
   }
 }
