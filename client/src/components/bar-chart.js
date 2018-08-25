@@ -18,7 +18,6 @@ class KdChart extends Component {
           )
           data.push(items)
         }
-        console.log('data', data)
     };
 
     const colors = [
@@ -30,7 +29,7 @@ class KdChart extends Component {
     ]
 
     return (
-      <div>
+      <div className='barChartCard'>
         <h3>Lifetime KD Scores</h3>
         <div class='chart-card'>
           <BarChart width={500} height={250} data={data}>

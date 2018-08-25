@@ -58,6 +58,10 @@ body {
   padding: 16px;
 }
 
+.barChartCard {
+  margin-right: 32px;
+}
+
 .user-wrapper{
   margin-right: 64px;
 }
