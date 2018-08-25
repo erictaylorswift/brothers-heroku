@@ -11,13 +11,14 @@ class UserCard extends Component {
                 <div class='user-wrapper'>
                   <h4>{stats[i].epicUserHandle}</h4>
                   <div class='user-card'>
-                    <p>Wins: {stats[i].lifeTimeStats[9].value}</p>
-                    <p>Matches played: {stats[i].lifeTimeStats[8].value}</p>
+                    <p>Wins: {stats[i].lifeTimeStats[8].value}</p>
+                    <p>Matches played: {stats[i].lifeTimeStats[7].value}</p>
                   </div>
                 </div>
 
               users.push(userCard);
             }
+            console.log(stats[1].lifeTimeStats[7])
         };
 
         return (
