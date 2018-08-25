@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell, LabelList } from 'recharts';
+import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell } from 'recharts';
 
 class KdChart extends Component {
 
@@ -14,10 +14,11 @@ class KdChart extends Component {
         for (var i = 0; i<stats.length; i++){
           let items = createData(
             stats[i].epicUserHandle,
-            Number(stats[i].lifeTimeStats[11].value),
+            Number(stats[i].lifeTimeStats[11].value)
           )
           data.push(items)
-        };
+        }
+        console.log('data', data)
     };
 
     const colors = [
@@ -26,27 +27,21 @@ class KdChart extends Component {
       '#178FDB',
       '#FC9225',
       '#6AE2FD'
-    ];
+    ]
 
     return (
-      <div>
-        <h3>Lifetime KD Scores</h3>
-        <div class='chart-card'>
-          <BarChart width={500} height={250} data={data}>
-            <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10' axisLine={false}/>
-            <YAxis hide/>
-            <Tooltip />
-            <Bar dataKey='kd'>
-              {
-                data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} stroke={colors[index]} strokeWidth='4' fill='none'/>
-                ))
-              }
-              <LabelList dataKey='kd' position="insideTop" fill='#393939' stroke='none'/>
-            </Bar>
-          </BarChart>
-        </div>
-      </div>
+      <BarChart width={500} height={250} data={data}>
+        <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10'/>
+        <YAxis hide/>
+        <Tooltip />
+        <Bar dataKey='kd'>
+          {
+            data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index]}/>
+            ))
+          }
+        </Bar>
+      </BarChart>
     )
   }
 }
