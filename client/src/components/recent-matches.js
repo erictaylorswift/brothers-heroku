@@ -12,11 +12,11 @@ class RecentMatch extends Component {
 
         if (stats){
           for (var i = 0; i < stats.length; i++){
-            let matches = stats[i].recentMatches[1].playlist;
-            let kills = stats[i].recentMatches[1].kills;
-            let minutes = stats[i].recentMatches[1].minutesPlayed;
-            let score = stats[i].recentMatches[1].score;
-            let winner = stats[i].recentMatches[1].top1;
+            let matches = stats[i].recentMatches[0].playlist;
+            let kills = stats[i].recentMatches[0].kills;
+            let minutes = stats[i].recentMatches[0].minutesPlayed;
+            let score = stats[i].recentMatches[0].score;
+            let winner = stats[i].recentMatches[0].top1;
 
             let results =
               <div className='user-wrapper'>
