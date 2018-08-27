@@ -36,10 +36,16 @@ h1 {
     font-family: Burbank Big Condensed;
 }
 
+.appBar{
+  position: fixed;
+  width: 100%;
+  margin-top: -81px;
+}
+
 .tableTitle{
   margin-bottom: 8px;
   font-size: 1.8rem;
-  color: #880E4F !important;
+  color: #546e7a !important;
 }
 
 .tableCell{
