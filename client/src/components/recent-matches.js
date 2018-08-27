@@ -25,7 +25,7 @@ class RecentMatch extends Component {
                 {winner > 0 ? <Icon icon={trophy} /> : <Icon icon={bin} />}
                   <div >
                     <p>
-                      Your last match, you spent {minutes} min. playing {matches == 'p10' ? 'Duos' : (matches == 'p9' ? 'Squads' : 'Solos')}.
+                      Your last match, you spent {minutes} min. playing {matches === 'p10' ? 'Duos' : (matches === 'p9' ? 'Squads' : 'Solos')}.
                       <br/>You got {kills} kills and scored {score} points.
                       <br/>You were a {winner > 0 ? 'winner ' : 'loser ' }.
                     </p>
