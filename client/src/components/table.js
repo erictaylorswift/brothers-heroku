@@ -58,12 +58,12 @@ class BorderlessTable extends Component {
             {rows.map(row => {
               return(
                 <TableRow key={row.id}>
-                  <TableCell component="th" scope="row" >{row.name}</TableCell>
-                  <TableCell numeric>{row.matches}</TableCell>
-                  <TableCell numeric>{row.wins}</TableCell>
-                  <TableCell numeric>{row.per}</TableCell>
-                  <TableCell numeric>{row.kills}</TableCell>
-                  <TableCell numeric>{row.kd}</TableCell>
+                  <TableCell className='tableCell' component="th" scope="row" >{row.name}</TableCell>
+                  <TableCell className='tableCell' numeric>{row.matches}</TableCell>
+                  <TableCell className='tableCell' numeric>{row.wins}</TableCell>
+                  <TableCell className='tableCell' numeric>{row.per}</TableCell>
+                  <TableCell className='tableCell' numeric>{row.kills}</TableCell>
+                  <TableCell className='tableCell' numeric>{row.kd}</TableCell>
                 </TableRow>
               );
             })}

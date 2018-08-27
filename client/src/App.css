@@ -36,29 +36,17 @@ h1 {
     font-family: Burbank Big Condensed;
 }
 
-.MuiTypography-title-47{
-  padding-left: 44px;
-}
-
-.MuiTableCell-numeric-77{
-  text-align: left !important;
-  font-family: Source Code, monospace !important;
-}
-
-.MuiTableCell-head-74{
-  font-size: 1.8rem !important;
+.tableTitle{
+  margin-bottom: 8px;
+  font-size: 1.8rem;
   color: #880E4F !important;
 }
 
-.MuiTableCell-body-75{
-  color: #546E7A !important;
+.tableCell{
+  text-align: left !important;
   font-family: Source Code, monospace !important;
+  color: #546E7A !important;
 }
-
-.tableTitle{
-  margin-bottom: 8px;
-}
-
 
 .mainSection {
   margin: 82px 64px;
