@@ -13,9 +13,10 @@ app.get('/api/tracker', (req, res) => {
 	let urls = [
     'https://api.fortnitetracker.com/v1/profile/pc/lonefreak',
     'https://api.fortnitetracker.com/v1/profile/pc/Grùmpy',
-    'https://api.fortnitetracker.com/v1/profile/pc/ellis endo',
+    encodeURI('https://api.fortnitetracker.com/v1/profile/pc/elliṣ'),
     'https://api.fortnitetracker.com/v1/profile/pc/Ambrosiann',
     'https://api.fortnitetracker.com/v1/profile/pc/BawseMane',
+		// 'https://api.fortnitetracker.com/v1/challenges'
   ];
   let requests = urls.map(url => fetch(url, {
       method: "GET",
@@ -34,6 +35,7 @@ app.get('/api/tracker', (req, res) => {
     })
 });
 
+
 //Catchall handler for all requests that don't match above
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname+'/client/build/index.html'))
@@ -42,4 +44,4 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log('listening on port');
+console.log('listening on port ${port}');

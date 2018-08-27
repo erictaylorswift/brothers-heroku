@@ -4,11 +4,12 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 export const theme = createMuiTheme({
     palette: {
-        primary: deepPurple,
-        secondary: lightBlue,
-        textPrimary: deepPurple[50],
+      primary: {
+          main: '#37474F'
+      },
     },
     typography: {
-        fontFamily: 'Source Code Pro, monospace'
+        fontFamily: 'Burbank Big Condensed',
+        fontSize: '22',
     }
 })

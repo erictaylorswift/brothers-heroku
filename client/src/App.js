@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import KdChart from './components/bar-chart';
 import UserCard from './components/user-list';
-import PieGraph from './components/pie-chart'
+import PieGraph from './components/pie-chart';
+import BorderlessTable from './components/table';
+import RecentMatch from './components/recent-matches';
 import SimpleAppBar from './components/appbar';
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme } from './theme.js'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrophy, faDizzy } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faTrophy, faDizzy)
 
 class App extends Component {
     getData = () => {
@@ -25,12 +32,14 @@ class App extends Component {
       <div>
         <SimpleAppBar/>
         <div class="mainSection">
-          <h2>The Brothers</h2>
           <UserCard data={stats}/>
           <div class='container'>
             <KdChart data={stats}/>
             <PieGraph data={stats}/>
           </div>
+          <BorderlessTable data={stats}/>
+          <h5 className='tableTitle'>Most Recent Match</h5>
+          <RecentMatch data={stats}/>
         </div>
       </div>
       </MuiThemeProvider>

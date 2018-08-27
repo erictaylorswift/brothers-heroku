@@ -1,16 +1,56 @@
-h1, h2, h3 {
+h3 {
     font-size: 1.5rem;
-    font-family: Source Code Pro, monospace;
+    font-family: Burbank Big Condensed;
+    text-align: right;
+    color: #546E7A;
 }
+h4 {
+    font-size: 3rem;
+    font-family: Burbank Big Condensed;
+    margin-bottom: 6px;
+    color: #880E4F;
+    margin-top: 22px;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-family: Burbank Big Condensed;
+    text-align: left;
+    color: #546E7A;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-family: Burbank Big Condensed;
+}
+
+.MuiTypography-title-47{
+  padding-left: 44px;
+}
+
+.MuiTableCell-numeric-77{
+  text-align: left !important;
+  font-family: Source Code, monospace !important;
+}
+
+.MuiTableCell-head-74{
+  font-size: 1.8rem !important;
+  color: #880E4F !important;
+}
+
+.MuiTableCell-body-75{
+  color: #546E7A !important;
+  font-family: Source Code, monospace !important;
+}
+
+.tableTitle{
+  margin-bottom: 8px;
+}
+
 
 .mainSection {
-  margin: 22px 64px;
-}
-
-h4 {
-    font-size: 1rem;
-    font-family: Source Code Pro, monospace;
-    margin-bottom: 6px
+  margin: 82px 64px;
 }
 
 p {
@@ -37,11 +77,24 @@ body {
     /* min-width: 400px; */
 }
 
+.recharts-legend-item-text{
+  font-family: Source Code, monospace;
+}
+
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: baseline;
+    align-content: flex-start;
+}
+
+.SimpleAppBar-root-1{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
 }
 
 .childCard {
@@ -54,7 +107,6 @@ body {
 }
 
 .chart-card{
-  box-shadow: 0 2px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
   padding: 16px;
 }
 
@@ -63,15 +115,19 @@ body {
 }
 
 .user-wrapper{
-  margin-right: 64px;
+  margin-right: 102px;
 }
 
 .user-card{
-  box-shadow: 0 2px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
-  padding: 16px 16px 2px 16px;
-  background-color: #FF7895;
+  background-color: #FF4081;
   color: white;
   margin-bottom: 22px;
   border-radius: 2%;
-  width: 100%;
+  min-width: 145%;
+  margin-top: -32px;
+}
+
+.list{
+  padding: 16px 0 8px 22px;
+
 }

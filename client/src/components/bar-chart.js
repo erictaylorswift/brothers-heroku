@@ -30,7 +30,7 @@ class KdChart extends Component {
 
     return (
       <div className='barChartCard'>
-        <h3>Lifetime KD Scores</h3>
+          <h3>Lifetime KD Scores</h3>
         <div class='chart-card'>
           <BarChart width={500} height={250} data={data}>
             <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10' axisLine={false}/>

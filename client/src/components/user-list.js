@@ -5,20 +5,27 @@ class UserCard extends Component {
     render(){
         let users = [];
         let stats = this.props.data;
+
         if (stats){
             for (var i = 0; i < stats.length; i++){
+              let matches= stats[i].lifeTimeStats[7].value;
+              let wins = stats[i].lifeTimeStats[8].value;
+              let kills = stats[i].lifeTimeStats[10].value;
               let userCard =
                 <div class='user-wrapper'>
                   <h4>{stats[i].epicUserHandle}</h4>
                   <div class='user-card'>
-                    <p>Wins: {stats[i].lifeTimeStats[8].value}</p>
-                    <p>Matches played: {stats[i].lifeTimeStats[7].value}</p>
+                    <div className='list'>
+                      <p>Matches played: {matches}</p>
+                      <p>Wins: {wins}</p>
+                      <p>Kills: {kills}</p>
+                    </div>
                   </div>
                 </div>
 
               users.push(userCard);
             }
-            console.log(stats[1].lifeTimeStats[7])
+
         };
 
         return (
