@@ -35,6 +35,27 @@ app.get('/api/tracker', (req, res) => {
     })
 });
 
+app.get('/api/challenges', (req, res) => {
+	let urls = [
+		'https://api.fortnitetracker.com/v1/challenges'
+  ];
+  let requests = urls.map(url => fetch(url, {
+      method: "GET",
+      mode: "no-cors",
+      credentials: "include",
+      headers: {
+      "TRN-Api-Key": "582365b9-87d8-4c86-af13-a4c0caaec1b1"
+      }
+  }));
+
+  Promise.all(requests)
+    .then(responses=> Promise.all(responses.map(r => r.json())))
+    // .then(users => users.forEach(user => user.json()))
+    .then((data)=> {
+      return res.send({data: data})
+    })
+});
+
 
 //Catchall handler for all requests that don't match above
 app.get('*', (req, res) => {
@@ -44,4 +65,4 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log('listening on port ${port}');
+console.log('listening on port {{port}}' );
