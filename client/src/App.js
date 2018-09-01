@@ -8,11 +8,8 @@ import RecentMatch from './components/recent-matches';
 import SimpleAppBar from './components/appbar';
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme } from './theme.js'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrophy, faDizzy } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faTrophy, faDizzy)
+import challenges from './assets/challenges.png'
 
 class App extends Component {
     getData = () => {
@@ -32,7 +29,9 @@ class App extends Component {
       <div>
         <SimpleAppBar/>
         <div class="mainSection">
-          <img src='./assets/challenges.png' />
+          <a href='/challenges'>
+            <img src={challenges} className='top-btn'/>
+          </a>
           <UserCard data={stats}/>
           <div class='container'>
             <KdChart data={stats}/>

@@ -4,6 +4,7 @@ import ChalList from './challenge-list';
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme } from '../theme.js'
 import SimpleAppBar from './appbar'
+import tracker from '../assets/tracker.png'
 
 class Challenges extends Component {
     getData = () => {
@@ -23,6 +24,9 @@ class Challenges extends Component {
       <div>
         <SimpleAppBar />
         <div className='mainSection'>
+          <a href='/'>
+            <img src={tracker} className='top-btn'/>
+          </a>
           <ChalList data={stats} />
         </div>
       </div>

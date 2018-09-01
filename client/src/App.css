@@ -19,7 +19,7 @@ h4 {
     font-size: 3rem;
     font-family: Burbank Big Condensed;
     margin-bottom: 6px;
-    color: #880E4F;
+    color: #D5992B;
     margin-top: 22px;
 }
 
@@ -56,8 +56,25 @@ h1 {
 .appBar{
   position: fixed;
   width: 100%;
-  margin-top: -81px;
   z-index: 1;
+  margin-top: -82px;
+}
+
+.app-bar{
+  background-color: #6C1E9A !important;
+  background-image: linear-gradient( 160deg, #430666, #9944D5);
+}
+
+.bar-text{
+  color: #D5992B !important;
+  margin-left: 22px !important;
+}
+
+.top-btn{
+  position: fixed;
+  right: 64px;
+  top: 36px;
+  z-index: 5;
 }
 
 .tableTitle{
@@ -152,12 +169,14 @@ body {
   font-size: 18px;
 }
 .user-card{
-  background-color: #FF4081;
+  background-color: #7221A1;
+  background-image: radial-gradient(circle, #7221A1 30%, #410564 90%);
   color: white;
   margin-bottom: 22px;
   border-radius: 2%;
   min-width: 145%;
-  margin-top: -32px;
+  margin-top: -24px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sm-card{
