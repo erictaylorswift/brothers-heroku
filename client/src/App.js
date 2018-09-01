@@ -32,6 +32,7 @@ class App extends Component {
       <div>
         <SimpleAppBar/>
         <div class="mainSection">
+          <img src='./assets/challenges.png' />
           <UserCard data={stats}/>
           <div class='container'>
             <KdChart data={stats}/>
