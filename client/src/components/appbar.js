@@ -12,7 +12,6 @@ const styles ={
 }
 
 function SimpleAppBar(props) {
-  const { classes } = props;
   return (
     <div className='appBar'>
       <AppBar position="static" color='primary' className='app-bar'>

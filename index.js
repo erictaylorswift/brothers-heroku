@@ -7,6 +7,7 @@ const app = express();
 //Serve static files from React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+
 //Put all API endpoints under '/api'
 
 app.get('/api/tracker', (req, res) => {
@@ -16,6 +17,7 @@ app.get('/api/tracker', (req, res) => {
     encodeURI('https://api.fortnitetracker.com/v1/profile/pc/elliṣ'),
     'https://api.fortnitetracker.com/v1/profile/pc/Ambrosiann',
     'https://api.fortnitetracker.com/v1/profile/pc/BawseMane',
+		'https://api.fortnitetracker.com/v1/profile/pc/WoodenF0X',
 		// 'https://api.fortnitetracker.com/v1/challenges'
   ];
   let requests = urls.map(url => fetch(url, {

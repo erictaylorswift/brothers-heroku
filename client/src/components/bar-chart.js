@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell, LabelList } from 'recharts';
+import randomColor from 'randomcolor';
 
 class KdChart extends Component {
 
   render () {
     let stats = this.props.data;
     let data = [];
+    let players = 0;
     function createData(user, kd){
       return {user, kd};
     };
@@ -17,23 +19,21 @@ class KdChart extends Component {
             Number(stats[i].lifeTimeStats[11].value)
           )
           data.push(items)
+          players = players + 1;
         }
     };
 
-    const colors = [
-      '#8C15E0',
-      '#F3CF1A',
-      '#178FDB',
-      '#FC9225',
-      '#6AE2FD'
-    ]
+    const colors =randomColor({
+      count: players,
+      hue: '#D5992B'
+    })
 
     return (
       <div className='barChartCard'>
           <h3>Lifetime KD Scores</h3>
-        <div class='chart-card'>
-          <BarChart width={500} height={250} data={data}>
-            <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='10' axisLine={false}/>
+        <div className='chart-card'>
+          <BarChart width={600} height={300} data={data}>
+            <XAxis dataKey='user' fontFamily='Source Code Pro, sans serif' fontSize='4' axisLine={false}/>
             <YAxis hide/>
             <Tooltip />
             <Bar dataKey='kd'>

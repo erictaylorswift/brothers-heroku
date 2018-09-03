@@ -12,7 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "adorable-avatars": "^0.2.1",
     "express": "^4.16.3",
-    "node-fetch": "^2.2.0"
+    "foaas-client": "^0.2.0",
+    "node-fetch": "^2.2.0",
+    "react-favicon": "0.0.14",
+    "unirest": "^0.5.1"
   }
 }

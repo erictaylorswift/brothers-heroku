@@ -28,18 +28,18 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
       <div>
         <SimpleAppBar/>
-        <div class="mainSection">
+        <div className="mainSection">
           <a href='/challenges'>
-            <img src={challenges} className='top-btn'/>
+            <img src={challenges} className='top-btn' alt=''/>
           </a>
           <UserCard data={stats}/>
-          <div class='container'>
+          <div className='container'>
             <KdChart data={stats}/>
             <PieGraph data={stats}/>
           </div>
           <BorderlessTable data={stats}/>
           <h5 className='tableTitle'>Most Recent Match</h5>
-          <RecentMatch data={stats}/>
+          <RecentMatch data={stats} />
         </div>
       </div>
       </MuiThemeProvider>

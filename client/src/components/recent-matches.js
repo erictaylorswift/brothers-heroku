@@ -1,20 +1,17 @@
 import React, {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Icon from 'react-icons-kit'
 import {trophy} from 'react-icons-kit/icomoon/trophy'
 import {u1F44E} from 'react-icons-kit/noto_emoji_regular/u1F44E'
 import moment from 'moment'
+
 
 class RecentMatch extends Component {
 
     render(){
         let recent = [];
         let stats = this.props.data;
-
         if (stats){
           for (var i = 0; i < stats.length; i++){
-
-
             let matches = stats[i].recentMatches[0].playlist;
             let kills = stats[i].recentMatches[0].kills;
             let minutes = stats[i].recentMatches[0].minutesPlayed;
@@ -27,7 +24,10 @@ class RecentMatch extends Component {
               <div className='user-wrapper'>
                 <h4>{stats[i].epicUserHandle}</h4>
                 <div className='recent-card'>
-                {winner > 0 ? <Icon size={28} icon={trophy} /> : <Icon size={28} icon={u1F44E} />}
+                  <div className='winner-loser'>
+                    {winner > 0 ? <Icon size={28} icon={trophy} /> : <Icon size={28} icon={u1F44E} />}
+                    {winner > 0 ? <p> Winner</p> : <p> Loser</p>}
+                  </div>
                   <div >
                     <p>
                       {gameDay}
@@ -43,11 +43,11 @@ class RecentMatch extends Component {
               </div>
             recent.push(results);
           }
-
+            console.log(stats)
         };
 
         return (
-            <div class='container'>
+            <div className='container'>
               {recent}
             </div>
         )

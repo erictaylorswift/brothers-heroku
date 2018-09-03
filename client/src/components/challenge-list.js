@@ -20,7 +20,7 @@ class ChalList extends Component {
           <div className='user-wrapper'>
             <div className='inline-flex'>
               <h4>Challenge {Number([i]) + 1}</h4>
-              <img src={chalPic} className='challenge-icon'/>
+              <img src={chalPic} className='challenge-icon' alt=''/>
             </div>
             <div className='user-card sm-card'>
               <p className='card-text'>{startWord} {questTotal} {wordsLeft}</p>

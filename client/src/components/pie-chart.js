@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
+import randomColor from 'randomcolor';
 
 class PieGraph extends Component {
   render () {
     let stats = this.props.data;
     let data = [];
+    let players = 0;
     function createData(name, values){
       return {name, values};
     };
@@ -15,23 +17,22 @@ class PieGraph extends Component {
           stats[i].epicUserHandle,
           Number(stats[i].lifeTimeStats[10].value)
         )
-        data.push(items)
+        data.push(items);
+        players = players + 1;
       }
       console.log(data)
+      console.log(players)
     };
 
-    const colors = [
-      '#8C15E0',
-      '#F3CF1A',
-      '#178FDB',
-      '#FC9225',
-      '#6AE2FD'
-    ]
+    const colors = randomColor({
+      count: players,
+      hue: '#6C1E9A'
+    })
 
     return (
       <div>
         <h3>Lifetime Kills </h3>
-        <div class='chart-card'>
+        <div className='chart-card'>
           <PieChart width={500} height={250} >
             <Pie data={data} cx='50%' cy='50%' outerRadius={125} dataKey='values'>
               {

@@ -25,7 +25,7 @@ class Challenges extends Component {
         <SimpleAppBar />
         <div className='mainSection'>
           <a href='/'>
-            <img src={tracker} className='top-btn'/>
+            <img src={tracker} className='top-btn' alt=''/>
           </a>
           <ChalList data={stats} />
         </div>
