@@ -17,22 +17,44 @@ class BorderlessTable extends Component {
 
     if (stats) {
         for (var i = 0; i<stats.length; i++){
+          let soloMatches;
+          let soloWins;
+          let soloKills;
+
+          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+            soloMatches = 0;
+          } else {
+            soloMatches = stats[i].stats.curr_p2.matches.valueInt;
+          };
+
+          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+            soloWins = 0;
+          } else {
+            soloWins = stats[i].stats.curr_p2.top1.value;
+          };
+
+          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+            soloKills = 0;
+          } else {
+            soloKills = stats[i].stats.curr_p2.kills.value;
+          }
+
           let items = createData(
             stats[i].epicUserHandle,
-            stats[i].stats.curr_p9.matches.valueInt + stats[i].stats.curr_p2.matches.valueInt + stats[i].stats.curr_p10.matches.valueInt,
-            Number(stats[i].stats.curr_p9.top1.value) + Number(stats[i].stats.curr_p10.top1.value) + Number(stats[i].stats.curr_p2.top1.value),
+            stats[i].stats.curr_p9.matches.valueInt + soloMatches + stats[i].stats.curr_p10.matches.valueInt,
+            Number(stats[i].stats.curr_p9.top1.value) + Number(stats[i].stats.curr_p10.top1.value) + Number(soloWins),
 
             (((
-                Number(stats[i].stats.curr_p9.top1.value) + Number(stats[i].stats.curr_p10.top1.value) + Number(stats[i].stats.curr_p2.top1.value)
+                Number(stats[i].stats.curr_p9.top1.value) + Number(stats[i].stats.curr_p10.top1.value) + Number(soloWins)
             ) / (
-                stats[i].stats.curr_p9.matches.valueInt + stats[i].stats.curr_p2.matches.valueInt + stats[i].stats.curr_p10.matches.valueInt
+                stats[i].stats.curr_p9.matches.valueInt + soloMatches + stats[i].stats.curr_p10.matches.valueInt
             ))*100).toFixed(2),
-            Number(stats[i].stats.curr_p9.kills.value) + Number(stats[i].stats.curr_p10.kills.value) + Number(stats[i].stats.curr_p2.kills.value),
+            Number(stats[i].stats.curr_p9.kills.value) + Number(stats[i].stats.curr_p10.kills.value) + Number(soloKills),
 
             ((
-                Number(stats[i].stats.curr_p9.kills.value) + Number(stats[i].stats.curr_p10.kills.value) + Number(stats[i].stats.curr_p2.kills.value)
+                Number(stats[i].stats.curr_p9.kills.value) + Number(stats[i].stats.curr_p10.kills.value) + Number(soloKills)
             ) / (
-                stats[i].stats.curr_p9.matches.valueInt + stats[i].stats.curr_p2.matches.valueInt + stats[i].stats.curr_p10.matches.valueInt
+                stats[i].stats.curr_p9.matches.valueInt + soloMatches + stats[i].stats.curr_p10.matches.valueInt
             )).toFixed(2)
           )
           rows.push(items)
