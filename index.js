@@ -18,7 +18,7 @@ app.get('/api/tracker', (req, res) => {
     'https://api.fortnitetracker.com/v1/profile/pc/Ambrosiann',
     'https://api.fortnitetracker.com/v1/profile/pc/BawseMane',
 		'https://api.fortnitetracker.com/v1/profile/pc/WoodenF0X',
-		// 'https://api.fortnitetracker.com/v1/challenges'
+		// 'https://api.fortnitetracker.com/v1/profile/pc/xp-bar',
   ];
   let requests = urls.map(url => fetch(url, {
       method: "GET",
