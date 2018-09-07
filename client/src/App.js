@@ -8,6 +8,7 @@ import RecentMatch from './components/recent-matches';
 import SimpleAppBar from './components/appbar';
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { theme } from './theme.js'
+import { connect, PromiseState } from 'react-refetch'
 
 import challenges from './assets/challenges.png'
 
@@ -24,6 +25,8 @@ class App extends Component {
 
   render() {
     let stats = this.state ? this.state.data : null;
+
+
     return (
       <MuiThemeProvider theme={theme}>
       <div>
@@ -47,5 +50,7 @@ class App extends Component {
   }
 }
 
-
 export default App;
+// export default connect(props => ({
+//   stats: { url: '/api/tracker', refreshInterval: 60000 }
+// }))(App);

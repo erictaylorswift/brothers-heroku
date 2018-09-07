@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
-import randomColor from 'randomcolor';
+import ColorScheme from 'color-scheme';
 
 class PieGraph extends Component {
   render () {
@@ -24,10 +24,15 @@ class PieGraph extends Component {
       console.log(players)
     };
 
-    const colors = randomColor({
-      count: players,
-      hue: '#6C1E9A'
-    })
+    const scheme = new ColorScheme();
+
+    scheme.from_hue(296)
+      .scheme('analogic')
+      .add_complement(false)
+      .variation('default');
+
+    const colors = scheme.colors();
+    console.log(colors);
 
     return (
       <div>
@@ -37,7 +42,7 @@ class PieGraph extends Component {
             <Pie data={data} cx='50%' cy='50%' outerRadius={125} dataKey='values'>
               {
                 data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={colors[index]}/>
+                  <Cell key={`cell-${index}`} fill={'#' + colors[index]}/>
                 ))
               }
             </Pie>

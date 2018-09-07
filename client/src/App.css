@@ -36,6 +36,7 @@ h1 {
     font-family: Burbank Big Condensed;
 }
 
+
 .challenge-icon{
   max-width: 55px;
   display: block;
@@ -73,7 +74,7 @@ h1 {
 .top-btn{
   position: fixed;
   right: 64px;
-  top: 36px;
+  bottom: 64px;
   z-index: 5;
 }
 

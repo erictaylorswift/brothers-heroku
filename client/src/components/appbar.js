@@ -12,12 +12,23 @@ const styles ={
 }
 
 function SimpleAppBar(props) {
+
+  let quotes = [
+    "Seriously, fuck this game",
+    "I'm triggered",
+    "This lag tho -- Ambrosiann",
+    "Fuck you, Epic",
+    "Potato"
+  ];
+
+  let randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
+
   return (
     <div className='appBar'>
       <AppBar position="static" color='primary' className='app-bar'>
         <Toolbar >
             <Typography variant="title" color='inherit' className='bar-text'>
-                Brothers Tracker
+                {randomQuote}
             </Typography>
       </Toolbar>
       </AppBar>

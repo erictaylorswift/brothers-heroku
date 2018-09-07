@@ -21,19 +21,19 @@ class BorderlessTable extends Component {
           let soloWins;
           let soloKills;
 
-          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+          if (typeof stats[i].stats.curr_p2 === 'undefined') {
             soloMatches = 0;
           } else {
             soloMatches = stats[i].stats.curr_p2.matches.valueInt;
           };
 
-          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+          if (typeof stats[i].stats.curr_p2 === 'undefined') {
             soloWins = 0;
           } else {
             soloWins = stats[i].stats.curr_p2.top1.value;
           };
 
-          if (typeof stats[i].stats.curr_p2 == 'undefined') {
+          if (typeof stats[i].stats.curr_p2 === 'undefined') {
             soloKills = 0;
           } else {
             soloKills = stats[i].stats.curr_p2.kills.value;

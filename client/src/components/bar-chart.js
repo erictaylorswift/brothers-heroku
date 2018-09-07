@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BarChart, XAxis, YAxis, Tooltip, Bar, Cell, LabelList } from 'recharts';
-import randomColor from 'randomcolor';
+import ColorScheme from 'color-scheme';
 
 class KdChart extends Component {
 
@@ -23,10 +23,14 @@ class KdChart extends Component {
         }
     };
 
-    const colors =randomColor({
-      count: players,
-      hue: '#D5992B'
-    })
+    const scheme = new ColorScheme();
+
+    scheme.from_hue(57)
+      .scheme('tetrade')
+      .add_complement(false)
+      .variation('default');
+
+    const colors = scheme.colors();
 
     return (
       <div className='barChartCard'>
@@ -39,7 +43,7 @@ class KdChart extends Component {
             <Bar dataKey='kd'>
               {
                 data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} stroke={colors[index]} strokeWidth='4' fill='none'/>
+                  <Cell key={`cell-${index}`} stroke={'#' + colors[index]} strokeWidth='4' fill='none'/>
                 ))
               }
               <LabelList dataKey='kd' position="insideTop" fill='#393939' stroke='none'/>
